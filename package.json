@@ -1,0 +1,35 @@
+{
+	"name": "day-counter-frontend",
+	"version": "0.0.0",
+	"description": "A web app that lets you track days since / till a specified date.",
+	"private": true,
+	"dependencies": {
+		"react": "^16.11.0",
+		"react-dom": "^16.11.0",
+		"react-spring": "^8.0.27",
+		"styled-components": "^4.4.0"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.6.4",
+		"@babel/preset-env": "^7.6.3",
+		"@babel/preset-react": "^7.6.3",
+		"babel-loader": "^8.0.6",
+		"webpack": "^4.41.2",
+		"webpack-cli": "^3.3.9",
+		"webpack-dev-server": "^3.9.0",
+		"webpack-merge": "^4.2.2"
+	},
+	"scripts": {
+		"dev": "webpack-dev-server --config webpack.dev.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/serpenteagle/day-counter-frontend.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/serpenteagle/day-counter-frontend/issues"
+	},
+	"homepage": "https://github.com/serpenteagle/day-counter-frontend#readme"
+}
