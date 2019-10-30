@@ -3,6 +3,12 @@ const path = require("path");
 module.exports = {
 	entry: path.join(__dirname, "src/main.js"),
 	module: {
-		rules: [{ test: /\.js$/, use: "babel-loader" }]
+		rules: [
+			{ test: /\.js$/, use: "babel-loader" },
+			{
+				test: /\.(png|svg|jpg|gif)$/,
+				use: ["file-loader"]
+			}
+		]
 	}
 };
