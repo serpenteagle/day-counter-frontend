@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import styled from "styled-components";
 import { animated, useSpring, config } from "react-spring";
 
@@ -7,7 +7,7 @@ const Bar = styled.div`
 	height: calc(100% - 20px);
 	/* TODO: Find a different solution from using transforms in order to prevent animation conflicts */
 	transform: translateX(10px) translateY(10px);
-	background-color: white;
+	background-color: #5A5A5A;
 	border-radius: 21px;
 	box-sizing: border-box;
 	display: flex;
@@ -16,14 +16,14 @@ const Bar = styled.div`
 `;
 
 const Selector = styled.div`
-	height: calc(100% / ${props => props.count});
-	width: 100%;
+	height: calc(100% / ${props => props.count} - 22px);
+	width: calc(100% - 22px);
+	margin: 11px;
 	position: absolute;
-	top: 0;
-	background-color: rgba(20, 20, 20, 0.5);
-	backdrop-filter: blur(10px);
+	background-color: #818181;
 	border-radius: 15px;
 	pointer-events: none;
+	z-index: -100;
 `;
 const AnimatedSelector = animated(Selector);
 
@@ -39,6 +39,8 @@ const Navbar = props => {
 	const [selection, setSelection] = useState(0);
 	const [stride, setStride] = useState(null);
 
+	useEffect(() => props.onChange(selection),[selection])
+
 	const measuredRef = useCallback(node => {
 		if (node !== null) {
 			const height = node.getBoundingClientRect().height;
@@ -50,7 +52,7 @@ const Navbar = props => {
 	const SelectorSpring = useSpring({
 		from: { transform: "translateY(0px)" },
 		transform: `translateY(${stride * selection})`,
-		config: config.stiff
+		config: { mass: 1, tension: 375, friction: 30 }
 	});
 
 	return (
