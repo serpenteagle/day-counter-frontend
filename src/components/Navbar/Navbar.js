@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useEffect } from "react";
 import styled from "styled-components";
 import { animated, useSpring, config } from "react-spring";
-import CONSTANTS from '../../CONSTANTS.js'
+import CONSTANTS from "../../CONSTANTS.js";
 
 const Bar = styled.div`
 	display: inline-block;
@@ -29,6 +29,7 @@ const Selector = styled.div`
 	pointer-events: none;
 	z-index: 0;
 `;
+
 const AnimatedSelector = animated(Selector);
 
 const ItemWrapper = styled.div`
@@ -55,8 +56,8 @@ const Navbar = props => {
 	}, []);
 
 	const SelectorSpring = useSpring({
-		from: { transform: "translateY(0px)" },
-		transform: `translateY(${stride * selection})`,
+		from: { transform: "translate3d(0,0px,0)" },
+		transform: `translate3d(0,${stride * selection}px, 0)`,
 		config: { mass: 1, tension: 400, friction: 30 }
 	});
 

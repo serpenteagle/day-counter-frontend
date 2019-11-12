@@ -30,7 +30,7 @@ const ViewSlider = props => {
 	}, []);
 
 	const ContainerSpring = useSpring({
-    transform: `translateY(-${stride * props.value}px)`,
+    transform: `translate3d(0px, -${stride * props.value}px, 0px)`,
     config: { mass: 1, tension: 400, friction: 30 }
 	});
 
