@@ -7,14 +7,15 @@ const Wrapper = styled.div`
 	height: 100%;
 	width: 100%;
 	position: relative;
-	background-color: red;
+	/* background-color: red; */ 
 `;
 
 const Box = styled.div`
 	height: 100%;
 	width: 100%;
-	background-color: blue;
-	overflow-y: scroll;
+	/* background-color: blue; */
+	overflow: visible;
+	transform-style: flat;
 `;
 const EdgeBar = styled.div`
 	position: absolute;
@@ -47,8 +48,8 @@ const ScrollBox = props => {
 
 	return (
 		<Wrapper>
-			<EdgeBar top visible={!(overflow && scrollTop !== 0)} />
-			<EdgeBar bottom visible={!(overflow && scrollTop === 0)} />
+			{/* <EdgeBar top visible={!(overflow && scrollTop !== 0)} /> */}
+			{/* <EdgeBar bottom visible={!(overflow && scrollTop === 0)} /> */}
 			<Box ref={boxRef}>{props.children}</Box>
 		</Wrapper>
 	);

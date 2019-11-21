@@ -5,10 +5,8 @@ import CONSTANTS from "./CONSTANTS.js";
 import Navbar from "./components/Navbar/Navbar.js";
 import NavbarItem from "./components/Navbar/NavbarItem.js";
 import ViewSlider from "./components/ViewSlider/ViewSlider.js";
-// import Gridbox from "./components/Gridbox/Gridbox.js";
-import ScrollBox from "./components/ScrollBox/ScrollBox.js";
-import CounterCard from "./components/CounterCard/CounterCard.js";
-
+import CounterList from "./components/CounterList/CounterList.js";
+import SignIU from "./components/SignIU/SignIU.js";
 import accountIcon from "./assets/account-circle.svg";
 import dashboardIcon from "./assets/dashboard.svg";
 
@@ -39,7 +37,7 @@ const View = styled.div`
 	border-radius: 20px;
 `;
 
-const ScrollBoxContainer = styled.div`
+const CounterListContainer = styled.div`
 	width: 780px;
 	height: 100%;
 	margin: 0 auto;
@@ -52,6 +50,17 @@ const CounterCardContainer = styled.div`
 	overflow: visible;
 `;
 
+const Divider = styled.div`
+	height: 100%;
+	width: 30px;
+	background: linear-gradient(
+		to right,
+		rgba(255, 255, 255, 2%) 50%,
+		rgba(0, 0, 0, 10%) 50% 100%
+	);
+	display: inline-block;
+`;
+
 const App = () => {
 	const [view, setView] = useState(1);
 
@@ -62,18 +71,24 @@ const App = () => {
 				<NavbarItem icon={dashboardIcon} />
 			</Navbar>
 
+			{/* <Divider /> */}
+
 			<ViewSliderContainer>
 				<ViewSlider value={view}>
-					<View>
-						<ScrollBoxContainer>
-							<ScrollBox>
-								{/* <CounterCardContainer> */}
-									<CounterCard />
-								{/* </CounterCardContainer> */}
-							</ScrollBox>
-						</ScrollBoxContainer>
+					<View
+						style={{
+							display: "flex",
+							justifyContent: "center",
+							alignItems: "center"
+						}}
+					>
+						<SignIU />
 					</View>
-					<View></View>
+					<View>
+						<CounterListContainer>
+							<CounterList />
+						</CounterListContainer>
+					</View>
 				</ViewSlider>
 			</ViewSliderContainer>
 		</Viewport>

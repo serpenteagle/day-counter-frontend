@@ -1,7 +1,7 @@
 module.exports = {
-	COLOR_BG: "#303133",
-	COLOR_1: "#4E4F50",
-	COLOR_2: "#777879",
-	COLOR_3: "#96979A",
-	COLOR_4: "#E5E5E5"
+	COLOR_BG: "rgb(21,27,39)",
+	COLOR_1: "#283A4D",
+	COLOR_2: "#3B5772",
+	COLOR_3: "#526396",
+	COLOR_4: "#B6C1DE"
 };

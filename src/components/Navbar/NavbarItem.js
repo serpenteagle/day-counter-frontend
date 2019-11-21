@@ -17,6 +17,7 @@ const IconContainer = styled.div`
 const Icon = styled.img`
 	transform-origin: center;
   width: 48px;
+  /* filter: brightness(200%); */
 `;
 const AnimatedIcon = animated(Icon);
 
@@ -24,12 +25,14 @@ const NavbarItem = props => {
 
   const iconSpring = useSpring({
     transform: `scale(${props.selected ? 1.3 : 1})`,
+    // filter: props.selected ? 'brightness(200%)' : 'brightness(100%)',
     config: config.stiff
   })
 
 	return (
 		<IconContainer selected={props.selected}>
 			<AnimatedIcon style={iconSpring} src={props.icon} />
+      {/* <span dangerouslySetInnerHTML={{__html: props.icon}} /> */}
 		</IconContainer>
 	);
 };

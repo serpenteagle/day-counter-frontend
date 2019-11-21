@@ -5,12 +5,12 @@ import CONSTANTS from "../../CONSTANTS.js";
 
 const Bar = styled.div`
 	display: inline-block;
-	width: 110px;
-	height: calc(100% - 20px);
+	width: 130px;
+	height: calc(100% - 60px);
 	/* height: 100%; */
 	/* TODO: Find a different solution from using transforms in order to prevent animation conflicts */
 	/* transform: translateX(10px) translateY(10px); */
-	margin: 10px 0 10px 10px;
+	margin: 30px 50px 30px 50px;
 	background-color: ${CONSTANTS.COLOR_1};
 	border-radius: 21px;
 	box-sizing: border-box;
@@ -20,9 +20,11 @@ const Bar = styled.div`
 `;
 
 const Selector = styled.div`
-	height: calc(100% / ${props => props.count} - 22px);
-	width: calc(100% - 20px);
-	margin: 10px;
+	height: calc(100% / ${props => props.count});
+	width: 100%;
+	/* height: calc(100% / ${props => props.count} - 22px); */
+	/* width: calc(100% - 20px); */
+	/* margin: 10px; */
 	position: absolute;
 	background-color: ${CONSTANTS.COLOR_2};
 	border-radius: 15px;
