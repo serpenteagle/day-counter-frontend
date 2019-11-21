@@ -6,9 +6,14 @@ module.exports = {
 		rules: [
 			{ test: /\.js$/, use: "babel-loader" },
 			{
-				test: /\.(png|svg|jpg|gif)$/,
+				test: /\.(png|jpg|svg|gif)$/,
 				use: ["file-loader"]
 			}
+			// ,
+			// {
+			// 	test: /\.svg$/,
+			// 	loader: "svg-inline-loader"
+			// }
 		]
 	}
 };
