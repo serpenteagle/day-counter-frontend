@@ -4,9 +4,12 @@
 	"description": "A web app that lets you track days since / till a specified date.",
 	"private": true,
 	"dependencies": {
+		"moment": "^2.24.0",
 		"react": "^16.11.0",
 		"react-dom": "^16.11.0",
+		"react-flip-toolkit": "^7.0.7",
 		"react-spring": "^8.0.27",
+		"shortid": "^2.2.15",
 		"styled-components": "^4.4.0"
 	},
 	"devDependencies": {
@@ -15,6 +18,7 @@
 		"@babel/preset-react": "^7.6.3",
 		"babel-loader": "^8.0.6",
 		"file-loader": "^4.2.0",
+		"svg-inline-loader": "^0.8.0",
 		"webpack": "^4.41.2",
 		"webpack-cli": "^3.3.9",
 		"webpack-dev-server": "^3.9.0",
